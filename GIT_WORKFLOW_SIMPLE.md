@@ -32,8 +32,8 @@ chore: initialize Java project structure
 - Set up src/ folder for source files
 - Document 7-class architecture
 
-Project: Console-based study time tracker
-Focus: Core Java concepts without frameworks
+Project: Web-based study time tracker with Java HttpServer
+Focus: Core Java + basic web concepts without frameworks
 ```
 
 **Verify:**

@@ -1,9 +1,9 @@
 # Study Time Tracker
 
-A Java console application for tracking study time with file-based storage, focusing on core Java programming concepts.
+A Java web application for tracking study time with a modern UI, focusing on core Java programming concepts without complex frameworks.
 
-> **📌 Note**: This is a **simplified, beginner-friendly version** that focuses on core Java without frameworks. 
-> For the full Spring Boot web version, see [DESIGN.md](DESIGN.md).
+> **📌 Note**: This repository contains **two beginner-friendly versions** plus a full production version. 
+> The **Simple Web Version** (recommended) uses Java's built-in HttpServer - no Spring Boot needed!
 
 ## Two Versions Available
 
@@ -26,7 +26,7 @@ A Java console application for tracking study time with file-based storage, focu
 
 ### Features
 
-- 📝 **Add Time**: Log study sessions with subject, duration, date, and notes through console
+- 📝 **Add Time**: Log study sessions with subject, duration, date, and notes through web interface
 - ✏️ **Edit Time**: Modify existing study sessions by ID
 - 🗑️ **Delete Time**: Remove study sessions with confirmation
 - 📊 **Fetch History**: View complete study history with filtering by date/subject

@@ -6,7 +6,7 @@ This repository contains **TWO versions** of the Study Time Tracker application,
 
 ---
 
-## 📚 Simple Console Version (RECOMMENDED FOR BEGINNERS)
+## 📚 Simple Web Version (RECOMMENDED FOR BEGINNERS)
 
 ### Quick Facts
 - **Target Audience**: Java beginners, students learning OOP
@@ -16,7 +16,7 @@ This repository contains **TWO versions** of the Study Time Tracker application,
 - **Setup**: Just compile and run - no frameworks!
 
 ### What You'll Build
-A console-based application with **7 Java classes** (~700 lines) that:
+A web-based application with **6 Java classes + 3 web files** (~900 lines) that:
 - Tracks study sessions (add, edit, delete)
 - Stores data in a text file
 - Displays history with filtering
@@ -26,7 +26,7 @@ A console-based application with **7 Java classes** (~700 lines) that:
 ### Technology
 - **Language**: Java 17+
 - **Storage**: Text file (sessions.txt)
-- **UI**: Console/Terminal
+- **UI**: Web Browser (HTML/CSS/JS)
 - **Build**: javac/IDE
 - **Dependencies**: None!
 
@@ -231,7 +231,7 @@ mvn -version   # Should be 3.6+
 ## 📚 Learning Path Recommendation
 
 ### Recommended Progression:
-1. **Week 1-4**: Build the **Simple Console Version**
+1. **Week 1-5**: Build the **Simple Web Version**
    - Learn core Java
    - Understand OOP
    - Master File I/O
@@ -271,7 +271,7 @@ mvn -version   # Should be 3.6+
 - Collections (ArrayList, HashMap)
 - Exception handling
 - Date/Time API
-- Console application design
+- Web application design (HttpServer + HTML/CSS/JS)
 - CRUD operations
 - Data persistence basics
 
