@@ -2,29 +2,21 @@
 
 A Java web application for tracking study time with a modern UI, focusing on core Java programming concepts without complex frameworks.
 
-> **📌 Note**: This repository contains **two beginner-friendly versions** plus a full production version. 
-> The **Simple Web Version** (recommended) uses Java's built-in HttpServer - no Spring Boot needed!
+> **✨ This is a beginner-friendly implementation** using Java's built-in HttpServer - no Spring Boot, Maven, or database needed!
 
-## Two Versions Available
+## What This Repository Contains
 
-1. **📚 Simple Web Version** (Recommended for Beginners)
-   - Pure Java with built-in HttpServer (no Spring Boot!)
-   - Modern web interface (HTML/CSS/JS)
-   - JSON file storage
-   - 5 Java classes + 3 web files, ~850 lines total
-   - See [DESIGN_SIMPLE_WEB.md](DESIGN_SIMPLE_WEB.md) and [GIT_WORKFLOW_SIMPLE.md](GIT_WORKFLOW_SIMPLE.md)
+This repository contains a **fully working web application** built with pure Java:
+- ✅ **Backend**: Java with built-in HttpServer (no frameworks!)
+- ✅ **Frontend**: Modern HTML/CSS/JavaScript UI
+- ✅ **Storage**: Simple JSON file persistence
+- ✅ **5 Java classes + 3 web files** (~850 lines total)
 
-2. **🚀 Full Web Version** (For Advanced Learners)
-   - Spring Boot 3.2 with web UI
-   - REST API, database (H2/PostgreSQL)
-   - 20+ classes, ~2000+ lines of code
-   - See [DESIGN.md](DESIGN.md) and [GIT_WORKFLOW.md](GIT_WORKFLOW.md)
+**Status: Fully functional and ready to use!** 🚀
 
 ---
 
-## Simple Version Overview (This Repository)
-
-### Features
+## Features
 
 - 📝 **Add Time**: Log study sessions with subject, duration, date, and notes through web interface
 - ✏️ **Edit Time**: Modify existing study sessions by ID
@@ -32,7 +24,7 @@ A Java web application for tracking study time with a modern UI, focusing on cor
 - 📊 **Fetch History**: View complete study history with filtering by date/subject
 - 🏆 **Statistics**: View time by subject and study patterns
 
-### Technology Stack
+## Technology Stack
 
 - **Backend**: Java 17+ with built-in HttpServer
 - **Frontend**: HTML5, CSS3, Vanilla JavaScript  
@@ -40,7 +32,7 @@ A Java web application for tracking study time with a modern UI, focusing on cor
 - **Server**: com.sun.net.httpserver (built into Java!)
 - **No Spring Boot, Maven, or complex frameworks needed!**
 
-## Project Structure (Simple Version)
+## Project Structure
 
 ```
 study-time-tracker/
@@ -66,7 +58,7 @@ study-time-tracker/
 **Just 5 Java files + 3 web files!** 
 *(Statistics integrated into StudySessionManager for simplicity)*
 
-## Architecture (Simple Version)
+## Architecture
 
 ```
 Web UI (HTML/CSS/JS)
@@ -82,7 +74,7 @@ sessions.json (JSON File)
 
 See [DESIGN_SIMPLE_WEB.md](DESIGN_SIMPLE_WEB.md) for complete class designs and [GIT_WORKFLOW_SIMPLE.md](GIT_WORKFLOW_SIMPLE.md) for the development plan.
 
-## Getting Started (Simple Version)
+## Getting Started
 
 ### Prerequisites
 
@@ -119,7 +111,7 @@ java -cp src StudyTrackerApp
 ### No Complex Setup Required!
 Just compile, run, and open in browser - that's it!
 
-## Usage (Simple Web Version)
+## Usage
 
 ### Accessing the Application
 
@@ -210,9 +202,9 @@ Sessions are stored in `data/sessions.json` in JSON format:
 
 **No database setup required!** The file is created automatically on first run.
 
-## Development Progress (Simple Version)
+## Development Progress
 
-This simplified version follows a **12-commit plan** focusing on core Java + basic web:
+This application was built incrementally with clean git commits:
 
 ### Completed Implementation (6 Commits)
 1. ✅ Project Setup & Documentation
@@ -227,9 +219,9 @@ This simplified version follows a **12-commit plan** focusing on core Java + bas
    
 **Status: Fully functional and deployed!**
 
-See [GIT_WORKFLOW_SIMPLE.md](GIT_WORKFLOW_SIMPLE.md) for detailed commit plans.
+See [GIT_WORKFLOW_SIMPLE.md](GIT_WORKFLOW_SIMPLE.md) for detailed commit history and development approach.
 
-## Learning Objectives (Simple Version)
+## Learning Objectives
 
 This project teaches core Java concepts:
 
@@ -260,28 +252,15 @@ This project teaches core Java concepts:
 
 ## Future Enhancements
 
-After mastering the simple version, try adding:
+Try adding these features to extend the application:
 1. **Multiple Users**: Add User class and login system
 2. **Categories**: Group subjects by category
 3. **Goals**: Set daily/weekly study goals
 4. **Streaks**: Track consecutive study days
 5. **Export**: Export data to CSV
-6. **GUI**: Build Swing or JavaFX interface
-7. **Database**: Migrate to SQLite
-8. **Web Version**: Learn Spring Boot and build the full version!
-
-## Why Two Versions?
-
-| Question | Simple Web Version | Full Spring Boot Version |
-|----------|-------------------|-------------------------|
-| **Who is it for?** | Java beginners | Intermediate+ developers |
-| **What will I learn?** | Core Java + Basic Web | Spring Boot, REST APIs, JPA, Advanced Web |
-| **How long?** | 4-5 weeks | 8-10 weeks |
-| **Complexity?** | Low-Medium (5 Java + 3 web files) | High (20+ classes) |
-| **UI?** | Yes (HTML/CSS/JS) | Yes (more advanced) |
-| **Best for?** | Learning Java + Web basics | Building production apps |
-
-**Start with the Simple Version**, then progress to the Full Version once comfortable!
+6. **GUI**: Build Swing or JavaFX desktop interface
+7. **Database**: Migrate to SQLite or PostgreSQL
+8. **Framework Migration**: Rebuild with Spring Boot (see [DESIGN.md](DESIGN.md) for a Spring Boot design)
 
 ## Contributing
 
@@ -297,21 +276,37 @@ This is an educational project. Use freely for learning purposes.
 
 ---
 
-## Getting Started
+## Documentation
 
-**For Beginners**: Start with the Simple Web Version
-1. Read [DESIGN_SIMPLE_WEB.md](DESIGN_SIMPLE_WEB.md) to understand the architecture
-2. Follow [GIT_WORKFLOW_SIMPLE.md](GIT_WORKFLOW_SIMPLE.md) for step-by-step commits
-3. Build backend first, then add frontend
-4. Learn core Java + basic web concepts hands-on
-
-**For Advanced Learners**: Try the Full Spring Boot Version
-1. Read [DESIGN.md](DESIGN.md) for complete architecture
-2. Follow [GIT_WORKFLOW.md](GIT_WORKFLOW.md) for 20 planned commits
-3. Learn Spring Boot, REST APIs, and web development
-4. Build a production-ready application
+- **[DESIGN_SIMPLE_WEB.md](DESIGN_SIMPLE_WEB.md)** - Complete architecture and class designs
+- **[GIT_WORKFLOW_SIMPLE.md](GIT_WORKFLOW_SIMPLE.md)** - Development approach and commit history
+- **[DESIGN.md](DESIGN.md)** - Spring Boot version design (future reference)
+- **[SUMMARY.md](SUMMARY.md)** - Project overview and comparisons
 
 ---
 
-**Ready to start coding?** Pick your version and let's begin! 🚀📚
+## Quick Start
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/dnwood/study-time-tracker.git
+   cd study-time-tracker
+   ```
+
+2. **Compile the Java code**
+   ```bash
+   javac src/*.java
+   ```
+
+3. **Run the application**
+   ```bash
+   java -cp src StudyTrackerApp
+   ```
+
+4. **Open in browser**
+   ```
+   http://localhost:8080
+   ```
+
+That's it! Start tracking your study time! 🚀📚
 
