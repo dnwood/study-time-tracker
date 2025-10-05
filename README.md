@@ -11,7 +11,7 @@ A Java web application for tracking study time with a modern UI, focusing on cor
    - Pure Java with built-in HttpServer (no Spring Boot!)
    - Modern web interface (HTML/CSS/JS)
    - JSON file storage
-   - 6 Java classes + 3 web files, ~900 lines total
+   - 5 Java classes + 3 web files, ~850 lines total
    - See [DESIGN_SIMPLE_WEB.md](DESIGN_SIMPLE_WEB.md) and [GIT_WORKFLOW_SIMPLE.md](GIT_WORKFLOW_SIMPLE.md)
 
 2. **🚀 Full Web Version** (For Advanced Learners)
@@ -46,8 +46,7 @@ A Java web application for tracking study time with a modern UI, focusing on cor
 study-time-tracker/
 ├── src/
 │   ├── StudySession.java           # Model class
-│   ├── StudySessionManager.java    # Business logic (CRUD)
-│   ├── StatisticsCalculator.java   # Calculations & stats
+│   ├── StudySessionManager.java    # Business logic (CRUD + Statistics)
 │   ├── JsonFileManager.java        # JSON file I/O
 │   ├── WebServer.java              # HTTP server & routes
 │   └── StudyTrackerApp.java        # Main entry point
@@ -64,7 +63,8 @@ study-time-tracker/
 └── GIT_WORKFLOW_SIMPLE.md         # Development plan
 ```
 
-**Just 6 Java files + 3 web files!**
+**Just 5 Java files + 3 web files!** 
+*(Statistics integrated into StudySessionManager for simplicity)*
 
 ## Architecture (Simple Version)
 
@@ -214,25 +214,18 @@ Sessions are stored in `data/sessions.json` in JSON format:
 
 This simplified version follows a **12-commit plan** focusing on core Java + basic web:
 
-### Phase 1: Backend Foundation (Commits 1-4)
-1. ✅ Project Setup
-2. ⏳ StudySession Model (with JSON methods)
-3. ⏳ JsonFileManager
-4. ⏳ StudySessionManager & StatisticsCalculator
-
-### Phase 2: Web Server (Commits 5-6)
-5. ⏳ WebServer class with routing
-6. ⏳ API endpoints (REST-like)
-
-### Phase 3: Frontend (Commits 7-10)
-7. ⏳ HTML structure
-8. ⏳ CSS styling
-9. ⏳ JavaScript - Add session
-10. ⏳ JavaScript - History & delete
-
-### Phase 4: Polish (Commits 11-12)
-11. ⏳ Statistics page
-12. ⏳ Error handling & polish
+### Completed Implementation (6 Commits)
+1. ✅ Project Setup & Documentation
+2. ✅ StudySession Model (with JSON methods)
+3. ✅ JsonFileManager (File I/O)
+4. ✅ StudySessionManager (CRUD + Statistics)
+5. ✅ WebServer + Main App + Full Web UI
+   - HTTP server with API endpoints
+   - HTML/CSS/JavaScript frontend
+   - Add, view, delete sessions
+   - Statistics dashboard
+   
+**Status: Fully functional and deployed!**
 
 See [GIT_WORKFLOW_SIMPLE.md](GIT_WORKFLOW_SIMPLE.md) for detailed commit plans.
 
@@ -284,7 +277,7 @@ After mastering the simple version, try adding:
 | **Who is it for?** | Java beginners | Intermediate+ developers |
 | **What will I learn?** | Core Java + Basic Web | Spring Boot, REST APIs, JPA, Advanced Web |
 | **How long?** | 4-5 weeks | 8-10 weeks |
-| **Complexity?** | Low-Medium (6 Java + 3 web files) | High (20+ classes) |
+| **Complexity?** | Low-Medium (5 Java + 3 web files) | High (20+ classes) |
 | **UI?** | Yes (HTML/CSS/JS) | Yes (more advanced) |
 | **Best for?** | Learning Java + Web basics | Building production apps |
 

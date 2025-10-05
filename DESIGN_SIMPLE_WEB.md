@@ -55,8 +55,7 @@ A **simple web-based Java application** for tracking study time using a lightwei
 study-time-tracker/
 ├── src/
 │   ├── StudySession.java           # Model class
-│   ├── StudySessionManager.java    # Business logic (CRUD)
-│   ├── StatisticsCalculator.java   # Calculations & stats
+│   ├── StudySessionManager.java    # Business logic (CRUD + Statistics)
 │   ├── JsonFileManager.java        # JSON file I/O
 │   ├── WebServer.java              # HTTP server & routes
 │   └── StudyTrackerApp.java        # Main entry point
@@ -71,7 +70,8 @@ study-time-tracker/
 └── README.md
 ```
 
-**Just 6 Java files + 3 web files!**
+**Just 5 Java files + 3 web files!** 
+*(Note: Statistics functionality is integrated into StudySessionManager for simplicity)*
 
 ---
 
@@ -155,46 +155,44 @@ public class JsonFileManager {
 ---
 
 ### 3. `StudySessionManager.java` (Business Logic)
-Same as console version - manages CRUD operations:
+Manages CRUD operations AND statistics (combined for simplicity):
 
 ```java
 public class StudySessionManager {
     private List<StudySession> sessions;
     private JsonFileManager fileManager;
     
-    // Same methods as console version:
-    // - addSession()
-    // - editSession()
-    // - deleteSession()
-    // - getAllSessions()
-    // - getSessionById()
-    // - filterByDateRange()
-    // - filterBySubject()
+    // CRUD Methods:
+    // - addSession() - create new session
+    // - updateSession() - modify existing session
+    // - deleteSession() - remove session by ID
+    // - getAllSessions() - get all sessions
+    // - getSessionById() - find by ID
+    
+    // Filtering Methods:
+    // - getSessionsByDateRange() - filter by date
+    // - getSessionsBySubject() - filter by subject
+    // - getSessionsSortedByDate() - sort by date
+    
+    // Statistics Methods (integrated):
+    // - getTotalMinutes() - sum all durations
+    // - getTotalMinutes(start, end) - sum for date range
+    // - getTimeBySubject() - Map<Subject, TotalMinutes>
+    // - getSessionCount() - total sessions
+    // - getAverageSessionMinutes() - average duration
+    // - formatDuration() - convert minutes to "Xh Ym"
 }
 ```
 
-**Java Concepts**: ArrayList, CRUD operations, filtering
+**Java Concepts**: ArrayList, CRUD operations, filtering, statistics, HashMap
+
+**Design Note**: Statistics functionality is integrated directly into StudySessionManager 
+rather than a separate class. This simplifies the architecture for beginners while 
+maintaining all functionality.
 
 ---
 
-### 4. `StatisticsCalculator.java` (Analytics)
-Same as console version:
-
-```java
-public class StatisticsCalculator {
-    // Same methods:
-    // - getTotalMinutes()
-    // - getTimeBySubject()
-    // - getAverageSessionMinutes()
-    // - formatDuration()
-    // - sortByDate()
-    // - sortByDuration()
-}
-```
-
----
-
-### 5. `WebServer.java` (HTTP Server) - NEW!
+### 4. `WebServer.java` (HTTP Server) - NEW!
 **The key new class** - handles HTTP requests:
 
 ```java
@@ -396,7 +394,7 @@ public class WebServer {
 
 ---
 
-### 6. `StudyTrackerApp.java` (Main)
+### 5. `StudyTrackerApp.java` (Main)
 Updated to start web server:
 
 ```java
@@ -921,7 +919,7 @@ function showToast(message, type = 'success') {
 | Aspect | Console Version | Web Version |
 |--------|----------------|-------------|
 | **UI** | Terminal only | Modern web interface |
-| **Classes** | 7 | 6 (+ 3 web files) |
+| **Classes** | 7 | 5 (+ 3 web files) |
 | **Usability** | Developer-friendly | User-friendly |
 | **Complexity** | Simpler | Slightly more complex |
 | **HTTP Server** | No | Yes (built-in HttpServer) |
@@ -933,27 +931,44 @@ function showToast(message, type = 'success') {
 
 ## Development Plan (12 Commits)
 
-### Phase 1: Backend Foundation (Commits 1-4)
-1. Project setup
-2. StudySession model with JSON methods
-3. JsonFileManager
-4. StudySessionManager & StatisticsCalculator
+### Actual Implementation (Commits 1-6)
 
-### Phase 2: Web Server (Commits 5-6)
-5. WebServer class with basic routing
-6. API endpoints (GET, POST, PUT, DELETE)
+**Commit 1**: Project Setup & Documentation
+- Comprehensive design documents
+- README and workflow plans
+- .gitignore and structure
 
-### Phase 3: Frontend (Commits 7-10)
-7. HTML structure and layout
-8. CSS styling (modern design)
-9. JavaScript - Add session functionality
-10. JavaScript - History and delete functionality
+**Commit 2**: StudySession Model
+- Core model class with JSON serialization
+- Manual JSON parsing without libraries
+- Full validation and error handling
 
-### Phase 4: Polish (Commits 11-12)
-11. Statistics page and charts
-12. Error handling, validation, polish
+**Commit 3**: JsonFileManager
+- File I/O for JSON persistence
+- Load/save sessions to data/sessions.json
+- Automatic directory creation
 
-**Timeline: 4-5 weeks for beginners**
+**Commit 4**: StudySessionManager
+- CRUD operations (add, update, delete, get)
+- Filtering and sorting methods
+- Statistics methods (integrated)
+- Auto-load and auto-save
+
+**Commits 5-9** (Combined): Complete Web Application
+- WebServer with HttpServer
+- StudyTrackerApp main entry point
+- HTML structure (index.html)
+- CSS styling (style.css)
+- JavaScript frontend (app.js)
+
+**Timeline: Completed in 1 intensive session!**
+
+### Simplifications Made:
+1. **Merged StatisticsCalculator into StudySessionManager** - Fewer classes, same functionality
+2. **Combined frontend commits** - Web UI built as cohesive unit
+3. **Streamlined for beginners** - Less complexity, easier to understand
+
+**Final Result: 5 Java files + 3 web files = fully functional app!**
 
 ---
 
